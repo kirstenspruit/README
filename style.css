@@ -63,14 +63,14 @@ pre {
     text-align: right;
 }
 
-.grid {
+main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: var(--gutter);
     row-gap: 2rem;
 }
 
-.half {
+section {
     width: 100%;  
 }
 
@@ -92,16 +92,16 @@ pre {
 /* --- MOBILE --- */
 @media only screen and (max-width:425px) {
     html {
-        font-size: 1.97vw;
+        font-size: 1.95vw;
     }
 
     header, p, h1, h2, h3, h4, h5, h6  {
         font-size: 10px;
     }
-    .grid {
+    main {
         display: block;
     }
-    .half {
+    section {
         width: var(--fullwidth);
     }
     .header__link:hover .header__link__info{

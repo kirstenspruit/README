@@ -6,11 +6,12 @@
 
     --bgcolor: #eee;
     --maincolor: #333;
+    --secondarycolor: lightgrey;
     --highlight-color: #00f;
 }
 
 html {
-    font-size: 0.998vw;
+    font-size: 0.975vw;
 }
 
 body {
@@ -45,6 +46,7 @@ header {
     position: fixed;
     width: var(--fullwidth);
     top: 0;
+    z-index: 100;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: var(--bgcolor);
@@ -63,15 +65,45 @@ pre {
     text-align: right;
 }
 
-main {
+.grid-col-12 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     column-gap: var(--gutter);
     row-gap: 2rem;
 }
 
 section {
     width: 100%;  
+    grid-column: span 6;
+}
+section.grid-col-12 {
+    margin-bottom: 4rem;
+}
+.section__general {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+.section__print {
+    grid-column-start: 5;
+    grid-column-end: 9;
+}
+.section__code {
+    grid-column-start: 9;
+    grid-column-end: 13;
+}
+.section__print p, .section__code p {
+    opacity: 25%;
+}
+.section__print:hover p, .section__code:hover p {
+    opacity: 100%;
+}
+.section__general::before,
+.section__print::before,
+.section__code::before {
+    content: "-------------------------------------------------------";
+}
+.noline::before {
+    content: "";
 }
 
 .inactive {
@@ -92,13 +124,13 @@ section {
 /* --- MOBILE --- */
 @media only screen and (max-width:425px) {
     html {
-        font-size: 1.95vw;
+        font-size: 1.92vw;
     }
 
-    header, p, h1, h2, h3, h4, h5, h6  {
+    header, p, h1, h2, h3, h4, h5, h6, li  {
         font-size: 10px;
     }
-    main {
+    .grid-col-12 {
         display: block;
     }
     section {
@@ -107,5 +139,17 @@ section {
     .header__link:hover .header__link__info{
         display: none;
     }
+
+    .section__general::before {
+        content: "-----------------------------------------------------------------------------------";
+    }
+    .section__print::before,
+    .section__code::before {
+        content: "";
+    }
+    .noline::before {
+        content: "";
+    }
     
 }
+

@@ -1,0 +1,9 @@
+/* In a CSS file a comment is written inbetween forward slashes and asterisks (with the same shortcut) */
+
+body {
+    margin: 0;
+    width: 100vw;   
+    /* vw = view-width, so 100vw = the full width of the viewport */
+}
+
+

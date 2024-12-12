@@ -12,12 +12,12 @@
 
 html {
     font-size: 0.975vw;
+    scroll-behavior: smooth;
 }
 
 body {
-    width: var(--fullwidth);
-    margin: 1rem;
-    margin-top: 12rem;
+    margin: 0;
+    padding: 0;
     font-size: 1rem;
     font-family: 'Menlo', monospace; 
     background-color: var(--bgcolor);   
@@ -34,31 +34,51 @@ a:hover {
 }
 
 p { 
+    font-size: 1rem;
     padding-right: 1rem;
     /* text-indent: 2rem; */
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, small {
     font-size: 1rem;
     font-weight: normal;
 }
 
-header {
-    position: fixed;
-    width: var(--fullwidth);
-    top: 0;
-    z-index: 100;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: var(--bgcolor);
+h1::before {
+    content: "# ";
+}
+h2::before {
+    content: "## ";
+}
+h3::before {
+    content: "### ";
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+
+
 pre {
+    font-size: 1rem;
     margin: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.header__right {
+.main {
+    margin: 0 1rem;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bgcolor);
+    font-size: 1rem;
+}
+
+.header__nav {
     position: absolute;
     right: 0;
     top: 1rem;
@@ -75,6 +95,7 @@ pre {
 section {
     width: 100%;  
     grid-column: span 6;
+    scroll-margin-top: 15rem;
 }
 section.grid-col-12 {
     margin-bottom: 4rem;
@@ -121,13 +142,20 @@ section.grid-col-12 {
     display: inline;
 }
 
+.footer {
+    margin: 1rem 0;
+}
+
 /* --- MOBILE --- */
 @media only screen and (max-width:425px) {
     html {
         font-size: 1.92vw;
     }
+    section {
+        scroll-margin-top: 18rem;
+    }
 
-    header, p, h1, h2, h3, h4, h5, h6, li  {
+    header, p, h1, h2, h3, h4, h5, h6, li, a, span, small  {
         font-size: 10px;
     }
     .grid-col-12 {

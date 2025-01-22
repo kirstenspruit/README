@@ -72,10 +72,12 @@ pre {
 }
 
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: var(--bgcolor);
     font-size: 1rem;
+    padding: 0.5rem 0;
+    z-index: 99;
 }
 
 .header__nav {
@@ -90,14 +92,15 @@ pre {
     grid-template-columns: repeat(12, 1fr);
     column-gap: var(--gutter);
     row-gap: 2rem;
+    margin-top: 15rem;
 }
 
-section {
+.section{
     width: 100%;  
     grid-column: span 6;
     scroll-margin-top: 15rem;
 }
-section.grid-col-12 {
+.section .grid-col-12 {
     margin-bottom: 4rem;
 }
 .section__general {
@@ -151,8 +154,8 @@ section.grid-col-12 {
     html {
         font-size: 1.92vw;
     }
-    section {
-        scroll-margin-top: 18rem;
+    .section{
+        scroll-margin-top: 19rem;
     }
 
     header, p, h1, h2, h3, h4, h5, h6, li, a, span, small  {
@@ -160,8 +163,9 @@ section.grid-col-12 {
     }
     .grid-col-12 {
         display: block;
+        margin-top: 19rem;
     }
-    section {
+    .section{
         width: var(--fullwidth);
     }
     .header__link:hover .header__link__info{

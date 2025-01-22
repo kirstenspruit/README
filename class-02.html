@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>README: From Plain Text to Publication</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/menlo');
+  </style>     
+</head>
+
+<body>
+  <main class="main">
+    <header class="header">
+      <div class="header__site-title">
+<pre>
+*******   ********     **     *******   ****     **** ********
+/**////** /**/////     ****   /**////** /**/**   **/**/**///// 
+/**   /** /**         **//**  /**    /**/**//** ** /**/**      
+/*******  /*******   **  //** /**    /**/** //***  /**/******* 
+/**///**  /**////   **********/**    /**/**  //*   /**/**////  
+/**  //** /**      /**//////**/**    ** /**   /    /**/**      
+/**   //**/********/**     /**/*******  /**        /**/********
+//     // //////// //      // ///////   //         // //////// 
+</pre>
+<h1>README: From Plain Text to Publication</h1>
+      </div>
+      <ul class="header__nav">
+        <li>
+          <a href="index.html">Class 01</a>
+        </li>
+      </ul>
+------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- -------------
+    </header>
+
+
+    <section class="grid-col-12"> 
+      <div class="section__general noline">
+        <h1>Class 02 (Wednesday 06/03/2024)</h1>
+        <h2>Introduction</h2>
+        <p>
+          The focus of today’s class is the <a href="https://en.wikipedia.org/wiki/Mise_en_place" target="_blank">mise-en-place</a> for your thesis publication: setting up your documents, master spreads and stylesheets, in a manner that will make your design process more efficient and consistent.
+        </p>
+        <p>
+          Obviously there are numerous schools of thought around graphic design principles, and not just one right way of designing a book or coding a website. Below you find some steps and tips that will help you get started building a system within which you can play around with layouts and styling.
+        </p>
+      </div>
+    </section>
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>Requirements</h2>
+      <p>
+        Make sure you have the necessary software to design or code your publication.
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        Adobe Indesign (this is what will be used in this tutorial) or suitable alternative.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        A code editor, such as <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>.
+      </p>
+    </div>
+  </section>
+  <section class="grid-col-12">
+    <div class="section__general">
+      <h2>1. A blank canvas</h2>
+      <p>
+  
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        Open a new Indesign file. Enter the dimensions of your page. Generally leave ‘facing pages’ ticked, and turn on ‘primary text frame’. You can already specify the margins and columns to the layout you have in mind, but this can also be done later.
+      </p>
+      <p>
+        In case you plan to have anything that flows over the edge of the paper (e.g. images or printed background colour) add a bleed, which an extended area that will be cut off. 
+      </p>
+      <p>
+        The slug is another (optional) extra area beyond the bleed that can hold printing information, customized color bar information, or display other instructions and descriptions for other information in the document.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Create a folder on your computer, open this folder with your code editor and create a new HTML (HyperText Markup Language) file called ‘index.html’. To start setting up the file, you can copy the code from <a href="example-empty/index.html" target="_blank">this empty page</a> (right click > View Page Source).
+      </p>
+      <p> 
+        To view your HTML file in its web form simply open it in your web browser and refresh when you have made an update to the code (since it is still local on your computer you don’t need to be connected to the internet).
+      </p>
+      <p>
+        The size of your canvas is fluid and can flow beyond the ‘viewport’, the user's visible area of a web page, both horizontally and vertically. It is useful to take the viewport as a measure to base your layout on, for instance by taking the full ‘view-width’ as the horizontal limit of your page. 
+      </p>
+      <p> 
+        You can set this up through a CSS (Cascading Style Sheets) file that is linked to the page in the ‘head’ (see style.css in the example page). Here the ‘body’ element’s width is set to 100vw, which means 100% of the viewport’s width.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>2. Base(line)</h2>
+      <p>
+        A good base from which to start specifying the measurements of your layout is actually the body text. Add a bit of a content, whether the actual content of your thesis text or some Lorem Ipsem. Set it in your desired typeface and try out some fontsizes and lineheights. 
+      </p>
+      <p>
+        Generally in books the main body text is between 10 and 12 points and for websites 16 pixels is a good starting point. Standard lineheight is the fontsize x 1.2 (120%), but you can make this slightly smaller or bigger to your liking.
+      </p>
+      <p>
+        Keep in mind that optimal line length for body text is 50–75 characters (it’s good to anticipate the approximate width of your textarea here).
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        From the ideal lineheight of your body text you are going to establish a baseline grid. A baseline grid consists of horizontal guide lines you can align the text throughout your entire document to. You can also base other measurements off of this value, such as the margins and gutters within a grid.
+      </p>
+      <p>
+        Through Preferences > Grids... you can specify the baseline grid. To have a perfectly distributed baseline grid across the entire height of your page, change Start to 0 and use this tool called <a href="https://fitbaseline.com/">fitbaseline</a> to find a fitted value nearest to your desired lineheight. Enter this value for Increment Every.
+      </p>
+      <p>
+        Make sure ‘Align to baseline grid’ is selected for your paragraph. You may have to decrease its lineheight to not have it jump to the next line.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Set the desired typeface through the font-family property. If you want to use one that is not a system/web-safe font, add it using the @font-face rule (<a href="https://www.w3schools.com/css/css3_fonts.asp" target="_blank">explained here</a>).
+      </p>
+      <p>
+        In code you don’t have to mind the alignment of your text through a baseline grid. However you can use the font-size of the main body text as a base value from which to determine other measurements, by adding ‘html { font-size: 16px;}’ at the top of your CSS file. You could even make this root font-size responsive to the view-width by making its value for instance ‘1.2vw’.
+      </p>
+      <p>
+        Now you can refer back to this for other properties such as margins, paddings or heading sizes using rem units (root em). 1rem equals the root font-size.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>3. Margins and grids</h2>
+      <p>
+        Unless you have very experimental plans for your design that require a different approach, working with a grid of columns and rows is essential for creating a coherent layout throughout your publication.
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        In File > Document Setup edit the margin, preferably using our fitted baseline value. Generally in books the margins are not the same in size, but are larger on the inside and bottom. For instance you can set the top and outside to 2x the baseline, bottom to 4x baseline and inside to 6x baseline. You’ll see how in this way the margin aligns nicely to your baseline grid.
+      </p>
+      <p>
+        Now make sure to go into your Master spread, select both pages and go to Layout > Margins and Columns. Depending on your desired layout, set the amount of columns. Set the gutter to the baseline value.
+      </p>
+      <p>
+        For the rows of your grid, which can be used for placing images or text blocks, go to Layout > Create Guides. To also align this perfectly to the grid, count the lines in the area and find a whole number that it is divisible by (and makes sense as an amount of rows). Adjust your top and bottom margins accordingly if needed. For instance an area of 45 lines can be divisible by 5. Five rows need four gutters, so take one line from the area and add it to your bottom margin.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Add a ‘main’ element and give it a margin such as 1rem. 
+      </p>
+      <p>
+        The default layout in an HTML page is elements that stack underneath each other as blocks. One way to create a simply layout in which elements can sit next to each other is through the grid layout module (<a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">explained here</a>). 
+      </p>
+      <p> 
+        In <a href="example-thesis/index.html" target="_blank">this example thesis page</a> you can right click > Inspect to look at how the grid and ‘grid-column-start’ and ‘grid-column-end’ properties can be used to place different elements across specific columns.
+      </p>
+      <p>
+        Keep in mind that the amount of things that can exist horizontally next to each other on a desktop computer is different than on a small mobile device. Usually it’s best to go back to ‘display: block;’ for the latter. Scroll down the example page’s stylesheet to see how this is altered for mobile screens.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>4.Typographic styles</h2>
+      <p>
+        Earlier you determined the size of the main body text. To create hierarchy in terms of headings, subheadings and other types of text, you need to differentiate through size, color, weight, case (e.g. capitalisation), position and/or aligment.
+      </p>
+      <p>
+        
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        To this efficiently throughout the entire document, and easily make changes when needed, use Paragraph Styles for each type of heading, subheading or paragraph.
+      </p>
+      <p>
+        Character Styles are used to create specific styling for individual characters, words or sentences within a paragraph. For instance to italicize the title of a book you are referencing. 
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        In HTML there is a set hierarchical semantic structure for headings (h1-h6) and paragraphs (p), which is good to adhere to for accessiblity reasons. Still you can style these elements however you want in the CSS, in a similar manner to paragraph styles in Indesign, and create additional classes for different types of paragraphs.
+      </p>
+      <p>
+        Similar to Character Styles in Indesign, you can use semantic elements such as the <a href="https://www.w3schools.com/tags/tag_i.asp" target="_blank">‘i’</a> tag or <a href="https://www.w3schools.com/tags/tag_span.asp" target="_blank">‘span’</a> tag for inline styling.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>5. Orientation/navigation</h2>
+      <p>
+        A standard section or page present in a publication is of course the table of contents. Next to this you can also think of other ways to help your reader navigate or orient themselves throughout your thesis. 
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        Page numbers are obviously the most important element for navigation in a printed publication. You add these in your Master spread, for instance on the bottom at an equal distance from the edge of the page as the top-margin. Select the number and go to Type > Insert Special Character > Markers > Current Page Number.
+      </p>
+      <p>
+        You can also add a running head, with the respective chapter title, to your Master spread.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        On a website you can make use of (internal) hyperlinks to jump through the thesis. In the <a href="example-thesis/index.html" target="_blank">example thesis</a> you can see how the table of contents consist of ‘a’ (anchor) tags that when clicked have you scroll to the section on the page with the matching ID.
+      </p>
+      <p>
+        Furthermore, you can make the table of contents ‘fixed’ or ‘sticky’ to remain in place when you scroll.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>6. Images</h2>
+      <p>
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        Add images to the grid by using the full width of one of more columns or leaving that as whitespace in which to place the image, or have it run across the full page or spread.
+      </p>
+      <p>
+        If the image overlaps with a textframe use Text Wrap to e.g. have the text go around and jump to the next line or column.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Add images through an ‘img’ tag with a ’figcaption’ nested together inside a ‘figure’. In the <a href="example-thesis/index.html" target="_blank">example thesis</a> they are place in between paragraphs, appearing to the right of the text that supposedly refers to it, and sticking to the top as you scroll down untill the section is over.
+      </p>
+      <p>
+       Make sure ‘img { width: 100%;}’ is added to your stylesheet to have the image fit the full width of the figure. You can also work with height and object-fit, or play with properties like filters or border-radius for rounded edges and circular forms <a href="https://www.w3schools.com/css/css3_images.asp" target="_blank">(explained here)</a>.
+      </p>
+      <p>
+        The digital equivalant of the full page/spread image can be done through a background-image property <a href="https://www.w3schools.com/html/html_images_background.asp" target="_blank">(explained here)</a>.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>7. References</h2>
+      <p>
+        Decide whether you want to references to be shown as foot-, side- or endnotes. As the terms suggest footnotes appear at the bottom of the page, sidenotes to the side of a text and endnotes at the end of the publication or section/chapter of a publication.
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        To insert a footnote go to Type > Insert Footnote, and alter the styling of it in Type > Document Footnote Options. Likewise for endnotes. For sidenotes you can make use of anchored frames <a href="https://community.adobe.com/t5/indesign-discussions/sidenote-system-in-new-document/td-p/8755940" target="_blank">(explained here)</a>.
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Similarly to the internal hyperlinks in the table of contents, you can link back and forth between the number of your foot-/side-/endnote and the reference, like in the <a href="example-thesis/index.html" target="_blank">example thesis</a>.
+      </p>
+    </div>
+  </section>
+  
+  <section class="grid-col-12"> 
+    <div class="section__general">
+      <h2>What else...?</h2>
+      <p>
+        
+      </p>
+    </div>
+    <div class="section__print">
+      <p>&rarr; print</p>
+      <p>
+        Hyphenation... orphans and widows... Typographic details... Printing and binding...
+      </p>
+    </div>
+    <div class="section__code">
+      <p>&rarr; code</p>
+      <p>
+        Responsiveness (mobile-first?)... More playful layouts... Video/audio... Hosting online...
+      </p>
+    </div>
+  </section>
+    </div>
+    <footer class="footer">
+------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- ------------- -------------
+<small>This website was developed for a series of classes within the Social Design Master department at Design Academy Eindhoven. Special thanks goes out to head of department Nadine Botha, coordinator Fay Kortleven and all students participating.</small>
+    </footer>
+  </main>
+
+
+</body>
+
+</html>
